@@ -4,7 +4,7 @@ from BinaryTree.bintree import bin_tree_node
 
 class TestBin_tree_node(TestCase):
     def test_make_tree(self):
-        values = [3,2,1,4,5,3]
+        values = [3, 2, 1, 4, 5, 3]
         new_tree = bin_tree_node.make_tree(values)
         for single_value in values:
             self.assertTrue(new_tree.contains_value(single_value))
@@ -25,6 +25,7 @@ class TestBin_tree_node(TestCase):
         self.assertFalse(new_tree.contains_value(7))
 
     def test_get_tree_as_list(self):
-        values = [3, 2, 1, 4, 5, 3]
+        values = [3, 2, 1, 4, 5, 3, 3, 3, 4, 2, 1, 2]
         new_tree = bin_tree_node.make_tree(values)
-        print(new_tree.get_tree_as_list())
+        values.sort()
+        self.assertEqual(values, new_tree.get_tree_as_list())
